@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magalhaes Tobias Sociedade Individual de Advocacia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Roboto', sans-serif; background: #fefcf9; color: #333; }
+    header { position: fixed; top: 0; width: 100%; background: linear-gradient(to right, #bfa38f, #dbcdbf); padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: #fff; font-weight: 600; font-size: 18px; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 16px; position: relative; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: #fff; transition: width 0.3s; }
+    nav a:hover { color: #f0e6dc; }
+    nav a:hover::after { width: 100%; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { height: 3px; width: 25px; background: #fff; border-radius: 2px; transition: all 0.3s ease; }
+    .menu-mobile { display: none; flex-direction: column; position: absolute; top: 60px; right: 20px; background-color: #cdb9a9; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+    .menu-mobile a { padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .menu-mobile a:last-child { border-bottom: none; }
+    @media (max-width: 768px) { nav { display: none; } .menu-toggle { display: flex; } }
+
+    .hero { margin-top: 65px; position: relative; height: 60vh; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.5s ease-in-out; }
+    .hero img.active { opacity: 1; z-index: 1; }
+    .letreiro { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.4); color: #fff; padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: 500; animation: fadeIn 2s ease-in-out infinite alternate; z-index: 2; text-align: center; }
+    @keyframes fadeIn { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+
+    .content { max-width: 1100px; margin: 0 auto; padding: 80px 20px 60px; }
+    section { margin-bottom: 60px; }
+    h2 { color: #5a4633; margin-bottom: 15px; font-size: 26px; position: relative; }
+    h2::after { content: ''; display: block; width: 50px; height: 3px; background: #bfa38f; margin-top: 10px; border-radius: 2px; }
+    p { line-height: 1.8; color: #444; font-size: 16px; }
+    .botao { display: inline-block; margin-top: 20px; background-color: #a88e75; color: white; padding: 10px 28px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+    .botao:hover { background-color: #8e755f; transform: scale(1.06); }
+
+    iframe { width: 100%; border: none; margin-top: 20px; border-radius: 10px; }
+
+    footer { background: linear-gradient(to right, #bfa38f, #cbbfb3); color: white; text-align: center; padding: 40px 20px; font-size: 14px; }
+    .social-icons { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+    .social-icons a { color: white; font-size: 20px; transition: 0.3s; }
+    .social-icons a:hover { color: #ddd; transform: scale(1.1); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Magalhaes Tobias</div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#atuacao">Atuação</a>
+    <a href="#juris">Jurisprudências</a>
+    <a href="#divorcio">Divórcio</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="menu-toggle" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu-mobile" id="mobileMenu">
+    <a href="#inicio">Início</a>
+    <a href="#atuacao">Atuação</a>
+    <a href="#juris">Jurisprudências</a>
+    <a href="#divorcio">Divórcio</a>
+    <a href="#contato">Contato</a>
+  </div>
+</header>
+
+<div class="hero" id="inicio">
+  <img src="imagens/escritorio1.jpg" class="slide active" />
+  <img src="imagens/escritorio2.jpg" class="slide" />
+  <img src="imagens/escritorio3.jpg" class="slide" />
+  <div class="letreiro" id="letreiro">Clique nas opções acima para saber mais sobre nossos serviços.</div>
+</div>
+
+<div class="content">
+  <section id="atuacao" data-aos="fade-up">
+    <h2>Áreas de Atuação</h2>
+    <p>Atuamos com excelência nas áreas de Direito de Família, Direito Cível e Direito Trabalhista...</p>
+  </section>
+
+  <section id="juris" data-aos="fade-up">
+    <h2>Jurisprudências</h2>
+    <iframe id="iframeJuris" src="jurisprudencia.html" onload="ajustarAltura(this)"></iframe>
+  </section>
+
+  <section id="divorcio" data-aos="fade-up">
+    <h2>Divórcio</h2>
+    <p>Esclareça dúvidas sobre divórcio consensual e litigioso...</p>
+  </section>
+
+  <section id="contato" data-aos="fade-up">
+  <h2>Contato</h2>
+  <form style="max-width: 700px; margin: 0 auto;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <input type="text" placeholder="Seu nome" required style="flex: 1 1 300px; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px;">
+      <input type="email" placeholder="Seu e-mail" required style="flex: 1 1 300px; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px;">
+    </div>
+    <input type="text" placeholder="Assunto" required style="width: 100%; padding: 12px; margin-top: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px;">
+    <textarea rows="5" placeholder="Mensagem" required style="width: 100%; padding: 12px; margin-top: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px;"></textarea>
+    <div style="margin: 15px 0; text-align: center;">
+      <img src="https://www.google.com/recaptcha/api2/logo_48.png" alt="CAPTCHA" style="height:40px;">
+    </div>
+    <div style="text-align: center;">
+      <button class="botao" type="submit">Enviar Mensagem</button>
+    </div>
+  </form>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4519492048326!2d-46.65657008447574!3d-23.58806036881245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d77ebd8c3d%3A0x40843b09e54862ab!2sPra%C3%A7a%20da%20S%C3%A9%20-%20S%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1624622355465!5m2!1spt-BR!2sbr" loading="lazy" style="width:100%; height:300px; border:none; border-radius: 10px; margin-top: 30px;"></iframe>
+</section>
+
+</div>
+
+<footer>
+  <p><strong>Magalhaes Tobias Sociedade Individual de Advocacia</strong></p>
+  <p>CNPJ: 26.257.739/0001-77 | Ativa desde 26/08/2016</p>
+  <p>Sociedade Unipessoal de Advocacia - Optante pelo Simples Nacional</p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p>&copy; 2025 - Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function ajustarAltura(iframe) {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      iframe.style.height = doc.body.scrollHeight + 'px';
+    } catch (e) { console.log("Erro ao ajustar altura do iframe."); }
+  }
+  function toggleMenu(el) {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+  let slides = document.querySelectorAll('.slide');
+  let index = 0;
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 5000);
+  const frases = [
+    "Clique nas opções acima para saber mais sobre nossos serviços.",
+    "Atendimento humanizado e profissional.",
+    "Especialista em Direito de Família, Cível e Trabalhista.",
+    "Transparência, ética e compromisso com você."
+  ];
+  let fIndex = 0;
+  const letreiro = document.getElementById('letreiro');
+  setInterval(() => {
+    fIndex = (fIndex + 1) % frases.length;
+    letreiro.textContent = frases[fIndex];
+  }, 6000);
+</script>
+</body>
+</html>
